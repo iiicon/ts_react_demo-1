@@ -1,4 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { MouseEventHandler } from 'react'
+import ReactDOM from 'react-dom'
+import './style.css'
+import Button from './Button'
 
-ReactDOM.render(<div>hello world</div>, document.getElementById('root'));
+const fn: MouseEventHandler = function(e) {
+  console.log(e)
+}
+ReactDOM.render(
+  <div>
+    hello world
+    <Button size="small" />
+    <Button size="big" />
+    <Button size="big" onClick={fn}>
+      <span>hello button</span>
+    </Button>
+  </div>,
+  document.getElementById('root')
+)
